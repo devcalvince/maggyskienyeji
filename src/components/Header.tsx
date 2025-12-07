@@ -3,13 +3,16 @@ import { Menu, X, ShoppingCart, Phone, Mail, Truck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useCart } from '@/context/CartContext';
 import { cn } from '@/lib/utils';
+import { Link, useLocation } from 'react-router-dom';
+import logo from '@/assets/logo.jpg';
 
 const navLinks = [
-  { name: 'Home', href: '#home' },
-  { name: 'Products', href: '#products' },
-  { name: 'About', href: '#about' },
-  { name: 'Testimonials', href: '#testimonials' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'Home', href: '/#home' },
+  { name: 'Products', href: '/#products' },
+  { name: 'About', href: '/#about' },
+  { name: 'Gallery', href: '/#gallery' },
+  { name: 'Blog', href: '/blog' },
+  { name: 'Contact', href: '/#contact' },
 ];
 
 export const Header = () => {
@@ -43,22 +46,33 @@ export const Header = () => {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
-            <a href="#home" className="flex items-center">
-              <h1 className="text-xl lg:text-2xl font-display font-bold text-primary">
+            <Link to="/#home" className="flex items-center gap-3">
+              <img src={logo} alt="Maggy's Kienyeji Logo" className="h-12 lg:h-14 w-auto" />
+              <h1 className="text-xl lg:text-2xl font-display font-bold text-primary hidden sm:block">
                 Maggy's Kienyeji
               </h1>
-            </a>
+            </Link>
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-8">
               {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className="font-medium text-foreground/80 hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full"
-                >
-                  {link.name}
-                </a>
+                link.href.startsWith('/') && !link.href.startsWith('/#') ? (
+                  <Link
+                    key={link.name}
+                    to={link.href}
+                    className="font-medium text-foreground/80 hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full"
+                  >
+                    {link.name}
+                  </Link>
+                ) : (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    className="font-medium text-foreground/80 hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full"
+                  >
+                    {link.name}
+                  </a>
+                )
               ))}
             </nav>
 
@@ -100,14 +114,25 @@ export const Header = () => {
         >
           <nav className="container mx-auto px-4 py-4 flex flex-col gap-4 border-t border-border">
             {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="font-medium text-foreground/80 hover:text-primary transition-colors py-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {link.name}
-              </a>
+              link.href.startsWith('/') && !link.href.startsWith('/#') ? (
+                <Link
+                  key={link.name}
+                  to={link.href}
+                  className="font-medium text-foreground/80 hover:text-primary transition-colors py-2"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {link.name}
+                </Link>
+              ) : (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="font-medium text-foreground/80 hover:text-primary transition-colors py-2"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {link.name}
+                </a>
+              )
             ))}
           </nav>
         </div>
