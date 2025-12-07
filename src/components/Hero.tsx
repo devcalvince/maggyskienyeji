@@ -1,5 +1,6 @@
 import { ArrowRight, Leaf, Award, Truck, HeartHandshake } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import logo from '@/assets/logo.jpg';
 
 const features = [
   { icon: Truck, label: 'Free Shipping', desc: 'On orders above 50 pkts' },
@@ -22,6 +23,15 @@ export const Hero = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center">
+          {/* Logo */}
+          <div className="flex justify-center mb-8 animate-fade-up">
+            <img 
+              src={logo} 
+              alt="Maggy's Kienyeji Logo" 
+              className="h-32 lg:h-40 w-auto drop-shadow-2xl"
+            />
+          </div>
+
           <span className="inline-block px-4 py-2 bg-secondary/20 text-secondary-foreground rounded-full text-sm font-medium mb-6 animate-fade-up backdrop-blur-sm border border-secondary/30">
             🌿 Premium Dried Indigenous Vegetables
           </span>
@@ -51,7 +61,7 @@ export const Hero = () => {
 
         {/* Features Grid */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-16 animate-fade-up animation-delay-400">
-          {features.map((feature, index) => (
+          {features.map((feature) => (
             <div
               key={feature.label}
               className="bg-background/10 backdrop-blur-sm rounded-xl p-4 lg:p-6 text-center border border-primary-foreground/10 hover:bg-background/20 transition-all duration-300"
