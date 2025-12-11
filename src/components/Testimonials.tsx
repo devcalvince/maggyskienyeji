@@ -17,7 +17,7 @@ const testimonials = [
     quote: "Maggys Kienyeji not only serves amazing food but also creates a wonderful dining experience. I can't recommend it enough!",
   },
   {
-    name: 'Ismael Kiprop',
+    name: 'Autene softwares',
     role: 'Web Developer',
     quote: "Maggys Kienyeji has changed the way I experience traditional meals. The flavors are authentic and absolutely delicious!",
   },
