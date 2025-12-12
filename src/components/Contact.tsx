@@ -13,14 +13,14 @@ const contactInfo = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'info@maggyskienyeji.com',
-    href: 'mailto:info@maggyskienyeji.com',
+    value: 'maggyskienyeji@gmail.com',
+    href: 'mailto:maggyskienyeji@gmail.com',
   },
   {
     icon: MapPin,
     label: 'Location',
-    value: 'Eldoret, Kenya',
-    href: '#',
+    value: 'Kimumu, Eldoret, Kenya',
+    href: 'https://maps.app.goo.gl/BupkE5xLRoiKwMm97',
   },
   {
     icon: Clock,
@@ -29,6 +29,8 @@ const contactInfo = [
     href: '#',
   },
 ];
+
+const GOOGLE_MAPS_EMBED_URL = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7574!2d35.269779!3d0.514277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMMKwMzAnNTEuNCJOIDM1wrAxNicxMS4yIkU!5e0!3m2!1sen!2ske!4v1234567890";
 
 export const Contact = () => {
   const [email, setEmail] = useState('');
@@ -82,7 +84,7 @@ export const Contact = () => {
 
           {/* Newsletter */}
           <div className="flex flex-col justify-center">
-            <div className="bg-primary-foreground/5 rounded-2xl p-8 border border-primary-foreground/10">
+            <div className="bg-primary-foreground/5 rounded-2xl p-8 border border-primary-foreground/10 mb-8">
               <h3 className="font-display text-2xl font-bold mb-4">
                 Subscribe to Our Newsletter
               </h3>
@@ -106,6 +108,36 @@ export const Contact = () => {
               </form>
             </div>
           </div>
+        </div>
+
+        {/* Google Map */}
+        <div className="mt-12">
+          <h3 className="font-display text-2xl font-bold mb-6 text-center">
+            Find Us on the Map
+          </h3>
+          <div className="rounded-2xl overflow-hidden shadow-lg border border-primary-foreground/10">
+            <iframe
+              src={GOOGLE_MAPS_EMBED_URL}
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Maggy's Kienyeji Location"
+              className="w-full"
+            />
+          </div>
+          <p className="text-center mt-4 text-primary-foreground/80">
+            <a 
+              href="https://maps.app.goo.gl/BupkE5xLRoiKwMm97" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-secondary transition-colors underline"
+            >
+              Open in Google Maps →
+            </a>
+          </p>
         </div>
       </div>
     </section>
