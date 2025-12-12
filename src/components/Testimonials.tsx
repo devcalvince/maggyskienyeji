@@ -2,6 +2,16 @@ import { Star, Quote } from 'lucide-react';
 
 const testimonials = [
   {
+    name: 'Customer from Ireland',
+    role: 'International Customer',
+    quote: "Hello. Forgot to mention. I received the vegetables and came with them to Ireland. At least I'm sorted for the next one year. Thanks alot",
+  },
+  {
+    name: 'Missionary Mark',
+    role: 'Mission Partner',
+    quote: "Missionary Mark received the contribution from Maggies. He was so excitedly because these mboga will help feed the students we are training. In addition he sent some of it to another bigger market to test Market of these products. He says it is likely to attract a good liking.",
+  },
+  {
     name: 'Justus Koech',
     role: 'System Analyst',
     quote: "Maggys Kienyeji has transformed our dining experience! The flavors are authentic and the service is exceptional. I highly recommend trying their signature dishes!",
@@ -15,11 +25,6 @@ const testimonials = [
     name: 'Evans Kipkemoi',
     role: 'Graphic Designer',
     quote: "Maggys Kienyeji not only serves amazing food but also creates a wonderful dining experience. I can't recommend it enough!",
-  },
-  {
-    name: 'Autene softwares',
-    role: 'Web Developer',
-    quote: "Maggys Kienyeji has changed the way I experience traditional meals. The flavors are authentic and absolutely delicious!",
   },
   {
     name: 'Gladys Chepchumba',
