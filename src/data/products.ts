@@ -1,3 +1,9 @@
+import amaranthImg from '@/assets/products/amaranth.jpg';
+import cowPeasImg from '@/assets/products/cow-peas.jpg';
+import africanSpinachImg from '@/assets/products/african-spinach.jpg';
+import spiderPlantImg from '@/assets/products/spider-plant.jpg';
+import managuImg from '@/assets/products/managu.jpg';
+
 export interface Product {
   id: string;
   name: string;
@@ -19,7 +25,7 @@ export const products: Product[] = [
     price: 350,
     originalPrice: 390,
     weight: "100g",
-    image: "https://maggyskienyeji.com/images/Chepkerta.jpeg",
+    image: amaranthImg,
     category: "Leafy Greens",
     description: "Rich in protein and iron, perfect for traditional dishes",
     inStock: true,
@@ -41,7 +47,7 @@ export const products: Product[] = [
     localName: "Kunde",
     price: 350,
     weight: "100g",
-    image: "https://maggyskienyeji.com/images/Kunde.jpeg",
+    image: cowPeasImg,
     category: "Leafy Greens",
     description: "Nutritious leaves packed with vitamins and minerals",
     inStock: true,
@@ -52,7 +58,7 @@ export const products: Product[] = [
     localName: "Nderema",
     price: 350,
     weight: "100g",
-    image: "https://maggyskienyeji.com/images/Nderema.jpeg",
+    image: africanSpinachImg,
     category: "Leafy Greens",
     description: "Traditional African spinach with authentic flavor",
     inStock: true,
@@ -75,7 +81,7 @@ export const products: Product[] = [
     localName: "Sakiat",
     price: 350,
     weight: "100g",
-    image: "https://maggyskienyeji.com/images/Sakiat%20(2).jpeg",
+    image: spiderPlantImg,
     category: "Leafy Greens",
     description: "Unique taste and high nutritional value",
     inStock: true,
@@ -86,7 +92,7 @@ export const products: Product[] = [
     localName: "Managu/Sochot",
     price: 350,
     weight: "100g",
-    image: "https://maggyskienyeji.com/images/Sochot.jpeg",
+    image: managuImg,
     category: "Leafy Greens",
     description: "Traditional vegetable with medicinal properties",
     inStock: true,
