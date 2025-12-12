@@ -1,6 +1,12 @@
 import { Trophy } from 'lucide-react';
+import agribusinessAward from '@/assets/awards/agribusiness-2025.jpeg';
 
 const awards = [
+  {
+    title: 'Kenya Agribusiness Entrepreneurship Program 2025',
+    description: 'Successfully completed KAEP in 2025 - Joule & E4Impact',
+    image: agribusinessAward,
+  },
   {
     title: 'Pacesetters Awards Ceremony East Africa',
     description: 'Winner in Pacesetter Vegetable Value Addition category',
