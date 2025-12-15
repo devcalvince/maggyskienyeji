@@ -76,7 +76,7 @@ export const Footer = () => {
         {/* Bottom */}
         <div className="border-t border-background/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-background/60 text-sm text-center md:text-left">
-            © {new Date().getFullYear()} Maggy's Kienyeji LTD. All rights reserved.
+            © {new Date().getFullYear()} Maggy's Kienyeji LTD & Autene Softwares. All rights reserved.
           </p>
           <p className="text-background/60 text-sm flex items-center gap-1">
             Made with <Heart className="w-4 h-4 text-secondary fill-secondary" /> in Kenya
