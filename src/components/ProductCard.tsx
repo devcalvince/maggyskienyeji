@@ -25,11 +25,11 @@ export const ProductCard = ({ product }: ProductCardProps) => {
 
   return (
     <div className="group bg-card rounded-2xl overflow-hidden shadow-soft hover:shadow-elevated transition-all duration-300 hover:-translate-y-1">
-      {/* Image */}
       <div className="relative aspect-square overflow-hidden bg-muted">
         <img
           src={product.image}
           alt={`${product.name} - ${product.localName}`}
+          loading="lazy"
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
         />
         {discount > 0 && (
