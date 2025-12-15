@@ -108,7 +108,7 @@ export const Contact = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder="+254..."
+                    placeholder="Your phone number"
                     className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-secondary"
                   />
                 </div>
@@ -146,15 +146,14 @@ export const Contact = () => {
         {/* Contact Info Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto mb-12">
           {/* Visit Us */}
-          <div className="bg-card rounded-xl border border-border p-5 flex items-start justify-between">
+          <div className="bg-card rounded-xl border border-border p-5 flex flex-col sm:flex-row items-start justify-between gap-3">
             <div className="flex items-start gap-4">
               <div className="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
                 <MapPin className="w-5 h-5 text-secondary" />
               </div>
               <div>
                 <h4 className="font-semibold text-foreground">Visit Us</h4>
-                <p className="text-sm text-muted-foreground">Kimumu, Eldoret</p>
-                <p className="text-sm text-muted-foreground">Kenya</p>
+                <p className="text-sm text-muted-foreground">Eldoret, Kenya</p>
               </div>
             </div>
             <a 
@@ -169,7 +168,7 @@ export const Contact = () => {
           </div>
 
           {/* Call Us */}
-          <div className="bg-card rounded-xl border border-border p-5 flex items-start justify-between">
+          <div className="bg-card rounded-xl border border-border p-5 flex flex-col sm:flex-row items-start justify-between gap-3">
             <div className="flex items-start gap-4">
               <div className="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
                 <Phone className="w-5 h-5 text-secondary" />
@@ -177,7 +176,6 @@ export const Contact = () => {
               <div>
                 <h4 className="font-semibold text-foreground">Call Us</h4>
                 <p className="text-sm text-muted-foreground">+254 721 937 682</p>
-                <p className="text-sm text-muted-foreground">+254 769 679557 (Backup)</p>
               </div>
             </div>
             <a href="tel:+254721937682">
@@ -188,7 +186,7 @@ export const Contact = () => {
           </div>
 
           {/* Email Us */}
-          <div className="bg-card rounded-xl border border-border p-5 flex items-start justify-between">
+          <div className="bg-card rounded-xl border border-border p-5 flex flex-col sm:flex-row items-start justify-between gap-3">
             <div className="flex items-start gap-4">
               <div className="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
                 <Mail className="w-5 h-5 text-secondary" />
@@ -206,7 +204,7 @@ export const Contact = () => {
           </div>
 
           {/* WhatsApp */}
-          <div className="bg-card rounded-xl border border-border p-5 flex items-start justify-between">
+          <div className="bg-card rounded-xl border border-border p-5 flex flex-col sm:flex-row items-start justify-between gap-3">
             <div className="flex items-start gap-4">
               <div className="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
                 <MessageCircle className="w-5 h-5 text-secondary" />
