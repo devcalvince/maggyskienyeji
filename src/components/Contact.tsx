@@ -1,125 +1,288 @@
-import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Send, MessageCircle, Truck, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 import { toast } from '@/hooks/use-toast';
 
-const contactInfo = [
-  {
-    icon: Phone,
-    label: 'Phone',
-    value: '+254 721 937 682',
-    href: 'tel:+254721937682',
-  },
-  {
-    icon: Mail,
-    label: 'Email',
-    value: 'maggyskienyeji@gmail.com',
-    href: 'mailto:maggyskienyeji@gmail.com',
-  },
-  {
-    icon: MapPin,
-    label: 'Location',
-    value: 'Kimumu, Eldoret, Kenya',
-    href: 'https://maps.app.goo.gl/BupkE5xLRoiKwMm97',
-  },
-  {
-    icon: Clock,
-    label: 'Hours',
-    value: 'Mon - Sat: 8AM - 6PM',
-    href: '#',
-  },
-];
-
 const GOOGLE_MAPS_EMBED_URL = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7574!2d35.269779!3d0.514277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMMKwMzAnNTEuNCJOIDM1wrAxNicxMS4yIkU!5e0!3m2!1sen!2ske!4v1234567890";
 
 export const Contact = () => {
-  const [email, setEmail] = useState('');
+  const [formData, setFormData] = useState({
+    fullName: '',
+    subject: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
+    if (formData.fullName && formData.message && (formData.email || formData.phone)) {
       toast({
-        title: "Subscribed!",
-        description: "Thank you for subscribing to our newsletter.",
+        title: "Message Sent!",
+        description: "We'll respond within 24 hours.",
       });
-      setEmail('');
+      setFormData({ fullName: '', subject: '', email: '', phone: '', message: '' });
+    } else {
+      toast({
+        title: "Please fill required fields",
+        description: "Full name, message, and either email or phone is required.",
+        variant: "destructive"
+      });
     }
   };
 
-  return (
-    <section id="contact" className="py-20 lg:py-28 gradient-nature text-primary-foreground">
-      <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
-          {/* Contact Info */}
-          <div>
-            <span className="text-secondary font-medium text-sm uppercase tracking-wider">
-              Get in Touch
-            </span>
-            <h2 className="font-display text-3xl lg:text-5xl font-bold mt-2 mb-6">
-              Contact Us
-            </h2>
-            <p className="text-primary-foreground/80 text-lg mb-8 leading-relaxed">
-              Have questions or want to place an order? We'd love to hear from you. 
-              Reach out through any of the channels below.
-            </p>
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  };
 
-            <div className="grid sm:grid-cols-2 gap-4">
-              {contactInfo.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  className="flex items-start gap-4 p-4 bg-primary-foreground/5 rounded-xl border border-primary-foreground/10 hover:bg-primary-foreground/10 transition-colors"
-                >
-                  <div className="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center flex-shrink-0">
-                    <item.icon className="w-5 h-5 text-secondary" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-primary-foreground/60">{item.label}</p>
-                    <p className="font-medium">{item.value}</p>
-                  </div>
-                </a>
-              ))}
+  return (
+    <section id="contact" className="py-20 lg:py-28 bg-background">
+      <div className="container mx-auto px-4">
+        {/* Section Header */}
+        <div className="text-center max-w-2xl mx-auto mb-12">
+          <span className="text-secondary font-medium text-sm uppercase tracking-wider">
+            Contact Us
+          </span>
+          <h2 className="font-display text-3xl lg:text-5xl font-bold text-foreground mt-2 mb-4">
+            Get in Touch
+          </h2>
+          <p className="text-muted-foreground text-lg">
+            Have questions or want to place an order? We'd love to hear from you.
+          </p>
+        </div>
+
+        {/* Contact Form Card */}
+        <div className="max-w-2xl mx-auto mb-12">
+          <div className="bg-card rounded-2xl border border-border p-6 lg:p-8 shadow-sm">
+            <h3 className="text-secondary font-display text-xl font-semibold mb-6">
+              Send Us a Message
+            </h3>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-medium text-foreground mb-1">
+                    Full Name <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    name="fullName"
+                    value={formData.fullName}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-secondary"
+                    required
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-foreground mb-1">
+                    Subject
+                  </label>
+                  <input
+                    type="text"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    placeholder="e.g., Product inquiry"
+                    className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-secondary"
+                  />
+                </div>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-medium text-foreground mb-1">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-secondary"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-foreground mb-1">
+                    Phone Number
+                  </label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="+254..."
+                    className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-secondary"
+                  />
+                </div>
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-foreground mb-1">
+                  Message <span className="text-red-500">*</span>
+                </label>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  placeholder="Tell us how we can help you..."
+                  rows={4}
+                  className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-secondary resize-none"
+                  required
+                />
+              </div>
+              <Button type="submit" variant="default" size="lg" className="w-full">
+                <Send className="w-4 h-4 mr-2" />
+                Send Message
+              </Button>
+              <p className="text-xs text-muted-foreground text-center">
+                * Email OR phone number required. We'll respond within 24 hours.
+              </p>
+            </form>
+          </div>
+        </div>
+
+        {/* Get In Touch Header */}
+        <h3 className="text-secondary font-display text-xl font-semibold mb-6 text-center lg:text-left max-w-4xl mx-auto">
+          Get In Touch
+        </h3>
+
+        {/* Contact Info Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto mb-12">
+          {/* Visit Us */}
+          <div className="bg-card rounded-xl border border-border p-5 flex items-start justify-between">
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
+                <MapPin className="w-5 h-5 text-secondary" />
+              </div>
+              <div>
+                <h4 className="font-semibold text-foreground">Visit Us</h4>
+                <p className="text-sm text-muted-foreground">Kimumu, Eldoret</p>
+                <p className="text-sm text-muted-foreground">Kenya</p>
+              </div>
+            </div>
+            <a 
+              href="https://maps.app.goo.gl/BupkE5xLRoiKwMm97" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <Button variant="outline" size="sm">
+                Get Directions
+              </Button>
+            </a>
+          </div>
+
+          {/* Call Us */}
+          <div className="bg-card rounded-xl border border-border p-5 flex items-start justify-between">
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
+                <Phone className="w-5 h-5 text-secondary" />
+              </div>
+              <div>
+                <h4 className="font-semibold text-foreground">Call Us</h4>
+                <p className="text-sm text-muted-foreground">+254 721 937 682</p>
+                <p className="text-sm text-muted-foreground">+254 769 679557 (Backup)</p>
+              </div>
+            </div>
+            <a href="tel:+254721937682">
+              <Button variant="outline" size="sm">
+                Call Now
+              </Button>
+            </a>
+          </div>
+
+          {/* Email Us */}
+          <div className="bg-card rounded-xl border border-border p-5 flex items-start justify-between">
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
+                <Mail className="w-5 h-5 text-secondary" />
+              </div>
+              <div>
+                <h4 className="font-semibold text-foreground">Email Us</h4>
+                <p className="text-sm text-muted-foreground">maggyskienyeji@gmail.com</p>
+              </div>
+            </div>
+            <a href="mailto:maggyskienyeji@gmail.com">
+              <Button variant="outline" size="sm">
+                Send Email
+              </Button>
+            </a>
+          </div>
+
+          {/* WhatsApp */}
+          <div className="bg-card rounded-xl border border-border p-5 flex items-start justify-between">
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
+                <MessageCircle className="w-5 h-5 text-secondary" />
+              </div>
+              <div>
+                <h4 className="font-semibold text-foreground">WhatsApp</h4>
+                <p className="text-sm text-muted-foreground">Quick responses</p>
+                <p className="text-sm text-muted-foreground">Order directly</p>
+              </div>
+            </div>
+            <a 
+              href="https://wa.me/254721937682" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <Button variant="outline" size="sm">
+                Chat Now
+              </Button>
+            </a>
+          </div>
+
+          {/* Business Hours */}
+          <div className="bg-card rounded-xl border border-border p-5">
+            <div className="flex items-start gap-4 mb-3">
+              <div className="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
+                <Clock className="w-5 h-5 text-secondary" />
+              </div>
+              <h4 className="font-semibold text-foreground">Business Hours</h4>
+            </div>
+            <div className="space-y-1 text-sm">
+              <div className="flex justify-between">
+                <span className="text-muted-foreground">Monday - Friday</span>
+                <span className="text-foreground">8:00 AM - 6:00 PM</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-muted-foreground">Saturday</span>
+                <span className="text-foreground">9:00 AM - 4:00 PM</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-muted-foreground">Sunday</span>
+                <span className="text-foreground">Closed</span>
+              </div>
             </div>
           </div>
 
-          {/* Newsletter */}
-          <div className="flex flex-col justify-center">
-            <div className="bg-primary-foreground/5 rounded-2xl p-8 border border-primary-foreground/10 mb-8">
-              <h3 className="font-display text-2xl font-bold mb-4">
-                Subscribe to Our Newsletter
-              </h3>
-              <p className="text-primary-foreground/80 mb-6">
-                Get updates about our latest products, special offers, and health tips 
-                delivered to your inbox.
-              </p>
-              <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 px-4 py-3 rounded-lg bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/50 focus:outline-none focus:ring-2 focus:ring-secondary"
-                  required
-                />
-                <Button variant="warm" size="lg" type="submit">
-                  <Send className="w-4 h-4" />
-                  Subscribe
-                </Button>
-              </form>
+          {/* Delivery Information */}
+          <div className="bg-card rounded-xl border border-border p-5">
+            <div className="flex items-start gap-4 mb-3">
+              <div className="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
+                <Truck className="w-5 h-5 text-secondary" />
+              </div>
+              <h4 className="font-semibold text-foreground">Delivery Information</h4>
+            </div>
+            <div className="space-y-2 text-sm">
+              <div>
+                <span className="text-secondary font-medium">Eldoret Town:</span>
+                <p className="text-muted-foreground">Free delivery for 2+ items (same-day)</p>
+              </div>
+              <div>
+                <span className="text-secondary font-medium">Outside Eldoret:</span>
+                <p className="text-muted-foreground">KSh 100-250 depending on distance</p>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Google Map */}
-        <div className="mt-12">
-          <h3 className="font-display text-2xl font-bold mb-6 text-center">
+        <div className="max-w-4xl mx-auto">
+          <h3 className="font-display text-xl font-semibold mb-4 text-secondary">
             Find Us on the Map
           </h3>
-          <div className="rounded-2xl overflow-hidden shadow-lg border border-primary-foreground/10">
+          <div className="rounded-xl overflow-hidden border border-border shadow-sm">
             <iframe
               src={GOOGLE_MAPS_EMBED_URL}
               width="100%"
-              height="400"
+              height="350"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
@@ -128,14 +291,14 @@ export const Contact = () => {
               className="w-full"
             />
           </div>
-          <p className="text-center mt-4 text-primary-foreground/80">
+          <p className="text-center mt-3 text-muted-foreground">
             <a 
               href="https://maps.app.goo.gl/BupkE5xLRoiKwMm97" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="hover:text-secondary transition-colors underline"
+              className="hover:text-secondary transition-colors inline-flex items-center gap-1"
             >
-              Open in Google Maps →
+              Open in Google Maps <ExternalLink className="w-3 h-3" />
             </a>
           </p>
         </div>

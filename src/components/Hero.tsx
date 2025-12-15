@@ -54,11 +54,14 @@ export const Hero = () => {
               index === currentSlide ? 'opacity-100' : 'opacity-0'
             }`}
           >
-            <img
-              src={image.src}
-              alt={image.alt}
-              className="w-full h-full object-contain bg-primary/95"
-            />
+            <div className="w-full h-full flex items-center justify-center bg-primary/95">
+              <img
+                src={image.src}
+                alt={image.alt}
+                loading={index === 0 ? "eager" : "lazy"}
+                className="max-w-full max-h-full object-contain p-4"
+              />
+            </div>
             <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/50 to-transparent" />
           </div>
         ))}
