@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 import { toast } from '@/hooks/use-toast';
 
-const GOOGLE_MAPS_EMBED_URL = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.757!2d35.2689!3d0.5143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x178101a3de8b6f07%3A0x63c7c4e3c3a30c6e!2sRogers%20Koech%2C%20Eldoret!5e0!3m2!1sen!2ske!4v1703000000000!5m2!1sen!2ske";
+const GOOGLE_MAPS_EMBED_URL = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.622540715603!2d35.2959418!3d0.5676055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x178105f7d5bbfff7%3A0x966ca47b05971f2c!2sMAGGY%27S%20KIENYEJI%20LTD.!5e0!3m2!1sen!2snl!4v1765895018971!5m2!1sen!2snl";
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -127,11 +127,13 @@ export const Contact = () => {
                   required
                 />
               </div>
-              <Button type="submit" variant="default" size="lg" className="w-full">
-                <Send className="w-4 h-4 mr-2" />
-                Send Message
-              </Button>
-              <p className="text-xs text-muted-foreground text-center">
+              <div className="flex justify-center">
+                <Button type="submit" variant="default" size="lg" className="w-full max-w-xs">
+                  <Send className="w-4 h-4 mr-2" />
+                  Send Message
+                </Button>
+              </div>
+              <p className="text-xs text-muted-foreground text-center mt-2">
                 * Email OR phone number required. We'll respond within 24 hours.
               </p>
             </form>
@@ -185,23 +187,26 @@ export const Contact = () => {
             </a>
           </div>
 
-          {/* Email Us */}
-          <div className="bg-card rounded-xl border border-border p-5 flex flex-col sm:flex-row items-start justify-between gap-3">
-            <div className="flex items-start gap-4">
-              <div className="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
-                <Mail className="w-5 h-5 text-secondary" />
-              </div>
-              <div>
-                <h4 className="font-semibold text-foreground">Email Us</h4>
-                <p className="text-sm text-muted-foreground">maggyskienyeji@gmail.com</p>
-              </div>
-            </div>
-            <a href="mailto:maggyskienyeji@gmail.com">
-              <Button variant="outline" size="sm">
-                Send Email
-              </Button>
-            </a>
-          </div>
+ <div className="bg-card rounded-xl border border-border p-5 flex flex-col sm:flex-row items-start justify-between gap-3">
+  {/* Added min-w-0 utility here to allow the text container to shrink */}
+  <div className="flex items-start gap-4 flex-1 min-w-0">
+    <div className="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
+      <Mail className="w-5 h-5 text-secondary" />
+    </div>
+    {/* Added break-all class to allow the email address to wrap */}
+    <div className="overflow-hidden">
+      <h4 className="font-semibold text-foreground">Email Us</h4>
+      <p className="text-sm text-muted-foreground break-all">info@maggyskienyeji.com</p>
+    </div>
+  </div>
+  <div className="flex-shrink-0 mt-3 sm:mt-0">
+    <a href="mailto:info@maggyskienyeji.com">
+      <Button variant="outline" size="sm" className="w-full sm:w-auto">
+        Send Email
+      </Button>
+    </a>
+  </div>
+</div>
 
           {/* WhatsApp */}
           <div className="bg-card rounded-xl border border-border p-5 flex flex-col sm:flex-row items-start justify-between gap-3">
