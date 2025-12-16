@@ -13,21 +13,28 @@ const features = [
 export const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background Image */}
+      
+      {/* Background Image Container with object-contain (fits image entirely) */}
       <div className="absolute inset-0">
+        
+        {/* The image container uses w-full h-full and object-contain */}
         <div className="w-full h-full flex items-center justify-center bg-primary/95">
-          <img
-            src={workersProcessing}
-            alt="Workers Processing Products"
-            loading="eager"
-            className="max-w-full max-h-full object-contain p-4"
+          <img 
+            src={workersProcessing} 
+            alt="Workers Processing Products" 
+            loading="eager" 
+            className="w-full h-full object-contain" 
           />
         </div>
+
+        {/* The overlay gradient for readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/50 to-transparent" />
       </div>
 
+      {/* Main Content (Logo, Text, Buttons, Features) */}
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center">
+          
           {/* Logo */}
           <div className="flex justify-center mb-8 animate-fade-up">
             <img 
