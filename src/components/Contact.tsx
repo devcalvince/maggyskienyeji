@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 import { toast } from '@/hooks/use-toast';
 
-const GOOGLE_MAPS_EMBED_URL = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7574!2d35.269779!3d0.514277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMMKwMzAnNTEuNCJOIDM1wrAxNicxMS4yIkU!5e0!3m2!1sen!2ske!4v1234567890";
+const GOOGLE_MAPS_EMBED_URL = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.757!2d35.2689!3d0.5143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x178101a3de8b6f07%3A0x63c7c4e3c3a30c6e!2sRogers%20Koech%2C%20Eldoret!5e0!3m2!1sen!2ske!4v1703000000000!5m2!1sen!2ske";
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -285,7 +285,7 @@ export const Contact = () => {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Maggy's Kienyeji Location"
+              title="Maggy's Kienyeji Ltd Location"
               className="w-full"
             />
           </div>

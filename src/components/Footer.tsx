@@ -23,7 +23,7 @@ export const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-2">
             <h3 className="font-display text-2xl font-bold mb-4">
-              Maggy's Kienyeji LTD
+              Maggy's Kienyeji Ltd
             </h3>
             <p className="text-background/70 mb-6 max-w-md">
               Bringing authentic Kenyan indigenous vegetables to your table. 
@@ -76,7 +76,7 @@ export const Footer = () => {
         {/* Bottom */}
         <div className="border-t border-background/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-background/60 text-sm text-center md:text-left">
-            © {new Date().getFullYear()} Maggy's Kienyeji LTD & Autene Softwares. All rights reserved.
+            © {new Date().getFullYear()} Maggy's Kienyeji Ltd & Autene Softwares. All rights reserved.
           </p>
           <p className="text-background/60 text-sm flex items-center gap-1">
             Made with <Heart className="w-4 h-4 text-secondary fill-secondary" /> in Kenya

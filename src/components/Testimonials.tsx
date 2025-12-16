@@ -12,23 +12,23 @@ const testimonials = [
     quote: "Missionary Mark received the contribution from Maggies. He was so excitedly because these mboga will help feed the students we are training. In addition he sent some of it to another bigger market to test Market of these products. He says it is likely to attract a good liking.",
   },
   {
-    name: 'Justus Koech',
-    role: 'System Analyst',
+    name: 'Otieno Ochieng',
+    role: 'Customer from Kisumu',
     quote: "Maggys Kienyeji has transformed our dining experience! The flavors are authentic and the service is exceptional. I highly recommend trying their signature dishes!",
   },
   {
-    name: 'Elizabeth Kiprono',
-    role: 'Entrepreneur',
+    name: 'Wanjiku Mwangi',
+    role: 'Customer from Nairobi',
     quote: "The value for money at Maggys Kienyeji is outstanding. Their dishes are delicious and affordable!",
   },
   {
-    name: 'Evans Kipkemoi',
-    role: 'Graphic Designer',
+    name: 'Kipchirchir Kosgei',
+    role: 'Customer from Kericho',
     quote: "Maggys Kienyeji not only serves amazing food but also creates a wonderful dining experience. I can't recommend it enough!",
   },
   {
-    name: 'Gladys Chepchumba',
-    role: 'Sales & Marketing Specialist',
+    name: 'Nyambura Nyokabi',
+    role: 'Customer from Nyeri',
     quote: "The atmosphere at Maggys Kienyeji is cozy, and the service is incredibly welcoming. It's my favorite spot for family gatherings!",
   },
 ];
@@ -47,7 +47,7 @@ export const Testimonials = () => {
           </h2>
           <p className="text-muted-foreground text-lg">
             Hear from our satisfied customers who have experienced the authentic taste 
-            of Maggy's Kienyeji products.
+            of Maggy's Kienyeji Ltd products.
           </p>
         </div>
 

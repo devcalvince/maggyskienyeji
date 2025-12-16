@@ -22,7 +22,7 @@ const events = [
 ];
 
 const galleryImages = [
-  { id: 1, image: gallery1, alt: 'Fresh vegetables at Maggy\'s Kienyeji' },
+  { id: 1, image: gallery1, alt: 'Fresh vegetables at Maggy\'s Kienyeji Ltd' },
   { id: 2, image: gallery2, alt: 'Indigenous vegetables farming' },
   { id: 3, image: gallery3, alt: 'Community engagement' },
   { id: 4, image: gallery4, alt: 'Vegetable processing' },
@@ -38,7 +38,7 @@ export const Gallery = () => {
             Gallery
           </span>
           <h2 className="font-display text-3xl lg:text-5xl font-bold text-foreground mt-2">
-            Our Events & Community Engagement
+            Our Events & Engagement
           </h2>
           <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
             Explore moments from our events promoting nutrition, health, and food security with indigenous vegetables.

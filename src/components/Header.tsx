@@ -47,9 +47,9 @@ export const Header = () => {
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
             <Link to="/#home" className="flex items-center gap-3">
-              <img src={logo} alt="Maggy's Kienyeji Logo" className="h-12 lg:h-14 w-auto" />
+              <img src={logo} alt="Maggy's Kienyeji Ltd Logo" className="h-12 lg:h-14 w-auto" />
               <h1 className="text-xl lg:text-2xl font-display font-bold text-primary hidden sm:block">
-                Maggy's Kienyeji
+                Maggy's Kienyeji Ltd
               </h1>
             </Link>
 
