@@ -1,6 +1,6 @@
-import { ShoppingCart, Plus } from 'lucide-react';
+import { Plus } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Product } from '@/data/products';
+import { Product, CartProduct } from '@/data/products';
 import { useCart } from '@/context/CartContext';
 import { toast } from '@/hooks/use-toast';
 
@@ -11,17 +11,24 @@ interface ProductCardProps {
 export const ProductCard = ({ product }: ProductCardProps) => {
   const { addToCart } = useCart();
 
-  const handleAddToCart = () => {
-    addToCart(product);
+  const handleAddToCart = (size: { weight: string; price: number }) => {
+    const cartProduct: CartProduct = {
+      id: `${product.id}-${size.weight}`,
+      name: product.name,
+      localName: product.localName,
+      price: size.price,
+      weight: size.weight,
+      image: product.image,
+      category: product.category,
+      description: product.description,
+      inStock: product.inStock,
+    };
+    addToCart(cartProduct);
     toast({
       title: "Added to cart!",
-      description: `${product.name} (${product.localName}) has been added to your cart.`,
+      description: `${product.name} (${size.weight}) has been added to your cart.`,
     });
   };
-
-  const discount = product.originalPrice
-    ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)
-    : 0;
 
   return (
     <div className="group bg-card rounded-2xl overflow-hidden shadow-soft hover:shadow-elevated transition-all duration-300 hover:-translate-y-1">
@@ -32,11 +39,6 @@ export const ProductCard = ({ product }: ProductCardProps) => {
           loading="lazy"
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
         />
-        {discount > 0 && (
-          <span className="absolute top-3 left-3 bg-secondary text-secondary-foreground px-3 py-1 rounded-full text-sm font-bold">
-            -{discount}%
-          </span>
-        )}
         <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </div>
 
@@ -49,32 +51,35 @@ export const ProductCard = ({ product }: ProductCardProps) => {
           {product.name}
         </h3>
         <p className="text-sm text-muted-foreground mb-1">
-          {product.localName} • {product.weight}
+          {product.localName}
         </p>
         <p className="text-xs text-muted-foreground mb-4 line-clamp-2">
           {product.description}
         </p>
 
-        <div className="flex items-center justify-between">
-          <div className="flex items-baseline gap-2">
-            <span className="text-xl font-bold text-primary">
-              KSH {product.price}
-            </span>
-            {product.originalPrice && (
-              <span className="text-sm text-muted-foreground line-through">
-                KSH {product.originalPrice}
-              </span>
-            )}
-          </div>
-          <Button
-            size="sm"
-            variant="hero"
-            onClick={handleAddToCart}
-            className="group/btn"
-          >
-            <Plus className="w-4 h-4 group-hover/btn:rotate-90 transition-transform" />
-            Add
-          </Button>
+        {/* Price and Add Buttons for each size */}
+        <div className="space-y-2">
+          {product.sizes.map((size) => (
+            <div key={size.weight} className="flex items-center justify-between">
+              <div className="flex items-baseline gap-2">
+                <span className="text-sm font-medium text-muted-foreground">
+                  {size.weight}:
+                </span>
+                <span className="text-lg font-bold text-primary">
+                  KSH {size.price}
+                </span>
+              </div>
+              <Button
+                size="sm"
+                variant="hero"
+                onClick={() => handleAddToCart(size)}
+                className="group/btn"
+              >
+                <Plus className="w-4 h-4 group-hover/btn:rotate-90 transition-transform" />
+                Add
+              </Button>
+            </div>
+          ))}
         </div>
       </div>
     </div>

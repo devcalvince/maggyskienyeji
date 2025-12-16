@@ -1,5 +1,8 @@
 import { Trophy } from 'lucide-react';
 import agribusinessAward from '@/assets/awards/agribusiness-2025.jpeg';
+import eldohubAward from '@/assets/awards/eldohub_award.jpg';
+import kalenjinAward from '@/assets/awards/kalenjin_award.jpg';
+import pacesettersTrophy from '@/assets/awards/pacesetters_trophy.jpg';
 
 const awards = [
   {
@@ -8,24 +11,19 @@ const awards = [
     image: agribusinessAward,
   },
   {
-    title: 'Pacesetters Awards Ceremony East Africa',
-    description: 'Winner in Pacesetter Vegetable Value Addition category',
-    image: 'https://maggyskienyeji.com/images/awardi.jpeg',
+    title: 'Pacesetters in Vegetable Value Addition',
+    description: 'Winner - Pacesetters Awards Eastern Africa Chapter 2023',
+    image: pacesettersTrophy,
   },
   {
-    title: 'Pacesetters Trophy',
-    description: 'Excellence in value-added indigenous vegetables',
-    image: 'https://maggyskienyeji.com/images/Award3.jpeg',
-  },
-  {
-    title: 'Kalenjin Awards Trophy',
+    title: 'Kalenjin Awards - Manufacturing Category',
     description: 'Processing and manufacturing of indigenous vegetables',
-    image: 'https://maggyskienyeji.com/images/award1.jpeg',
+    image: kalenjinAward,
   },
   {
     title: 'Top Agribusiness Innovator - EldoHub',
     description: 'Commitment to innovation and sustainability',
-    image: 'https://maggyskienyeji.com/images/eldohub_award.jpeg',
+    image: eldohubAward,
   },
 ];
 
