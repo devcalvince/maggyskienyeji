@@ -43,7 +43,7 @@ export const Hero = () => {
 
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-display font-bold text-primary-foreground mb-6 animate-fade-up animation-delay-100 leading-tight">
             Welcome to <br />
-            <span className="text-secondary">Maggy's Kienyeji Ltd</span>
+            <span>Maggy's Kienyeji Ltd</span>
           </h1>
 
           <p className="text-lg md:text-xl text-primary-foreground/90 mb-8 animate-fade-up animation-delay-200 max-w-xl mx-auto">
