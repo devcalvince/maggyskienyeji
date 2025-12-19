@@ -9,7 +9,7 @@ const testimonials = [
   {
     name: 'Missionary Mark',
     role: 'Mission Partner',
-    quote: "Missionary Mark received the contribution from Maggies. He was so excitedly because these mboga will help feed the students we are training. In addition he sent some of it to another bigger market to test Market of these products. He says it is likely to attract a good liking.",
+    quote: "Missionary Mark received the contribution from Maggys kienyeji ltd. He was so excitedly because these mboga will help feed the students we are training. In addition he sent some of it to another bigger market to test Market of these products. He says it is likely to attract a good liking.",
   },
   {
     name: 'Otieno Ochieng',

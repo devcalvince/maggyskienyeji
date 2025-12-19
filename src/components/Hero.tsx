@@ -4,7 +4,7 @@ import logo from '@/assets/logo.jpg';
 import workersProcessing from '@/assets/carousel/workers_processing.jpg';
 
 const features = [
-  { icon: Truck, label: 'Free Shipping', desc: 'On orders above 50 pkts' },
+  { icon: Truck, label: 'Free Shipping', desc: 'On orders above 50 pkts and within Eldoret' },
   { icon: Hourglass, label: 'Long Shelf Life', desc: 'Well packaged products' },
   { icon: Award, label: 'Superior Quality', desc: 'Premium ingredients' },
   { icon: HeartHandshake, label: '24/7 Support', desc: 'Always here for you' },
@@ -23,7 +23,7 @@ export const Hero = () => {
             src={workersProcessing} 
             alt="Workers Processing Products" 
             loading="eager" 
-            className="w-full h-full object-contain" 
+            className="w-full h-full object-cover object-top" 
           />
         </div>
 

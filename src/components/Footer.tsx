@@ -1,10 +1,21 @@
-import { Facebook, Instagram, Twitter, Youtube, Heart } from 'lucide-react';
+import { Facebook, Instagram, Youtube, Heart } from 'lucide-react';
 
 const socialLinks = [
-  { icon: Facebook, href: '#', label: 'Facebook' },
-  { icon: Instagram, href: '#', label: 'Instagram' },
-  { icon: Twitter, href: '#', label: 'Twitter' },
-  { icon: Youtube, href: '#', label: 'YouTube' },
+  {
+    icon: Facebook,
+    href: 'https://www.facebook.com/profile.php?id=61550794111144',
+    label: 'Facebook',
+  },
+  {
+    icon: Instagram,
+    href: 'https://www.instagram.com/maggyskienyejiveggies',
+    label: 'Instagram',
+  },
+  {
+    icon: Youtube, // used as TikTok placeholder icon
+    href: 'https://www.tiktok.com/@maggyskienyeji',
+    label: 'TikTok',
+  },
 ];
 
 const quickLinks = [
@@ -17,7 +28,7 @@ const quickLinks = [
 
 export const Footer = () => {
   return (
-    <footer className="bg-foreground text-background py-12 lg:py-16">
+    <footer className="bg-foreground text-primary-foreground py-12 lg:py-16">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12">
           {/* Brand */}
@@ -25,7 +36,7 @@ export const Footer = () => {
             <h3 className="font-display text-2xl font-bold mb-4">
               Maggy's Kienyeji Ltd
             </h3>
-            <p className="text-background/70 mb-6 max-w-md">
+            <p className="text-primary-foreground/80">
               Bringing authentic Kenyan indigenous vegetables to your table. 
               We're committed to nutrition, health, and food security through 
               quality dried vegetable products.
