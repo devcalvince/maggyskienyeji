@@ -1,4 +1,5 @@
 import { Facebook, Instagram, Heart } from 'lucide-react';
+import { gallery1 } from '@/assets/gallery/gallery1.jpeg';
 
 /* TikTok SVG Icon (Lucide does not provide one) */
 const TikTokIcon = ({ className }: { className?: string }) => (
@@ -99,7 +100,7 @@ export const Footer = () => {
             </h4>
             <ul className="space-y-3 text-primary-foreground/80">
               <li>+254 721 937 682</li>
-              <li>info@maggyskienyeji.com</li>
+              <li>maggyskienyeji@gmail.com</li>
               <li>Eldoret, Kenya</li>
               <li>Mon – Sat: 8:00 AM – 6:00 PM</li>
             </ul>

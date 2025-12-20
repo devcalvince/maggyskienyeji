@@ -29,9 +29,9 @@ export const Header = () => {
               <Phone className="w-4 h-4" />
               <span className="hidden sm:inline">+254 721 937 682</span>
             </a>
-            <a href="mailto:info@maggyskienyeji.com" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+            <a href="mailto:maggyskienyeji@gmail.com" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
               <Mail className="w-4 h-4" />
-              <span className="hidden sm:inline">info@maggyskienyeji.com</span>
+              <span className="hidden sm:inline">maggyskienyeji@gmail.com</span>
             </a>
           </div>
           <div className="flex items-center gap-2">

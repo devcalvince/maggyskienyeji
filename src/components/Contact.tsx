@@ -196,11 +196,11 @@ export const Contact = () => {
     {/* Added break-all class to allow the email address to wrap */}
     <div className="overflow-hidden">
       <h4 className="font-semibold text-foreground">Email Us</h4>
-      <p className="text-sm text-muted-foreground break-all">info@maggyskienyeji.com</p>
+      <p className="text-sm text-muted-foreground break-all">maggyskienyeji@gmail.com</p>
     </div>
   </div>
   <div className="flex-shrink-0 mt-3 sm:mt-0">
-    <a href="mailto:info@maggyskienyeji.com">
+    <a href="mailto:maggyskienyeji@gmail.com">
       <Button variant="outline" size="sm" className="w-full sm:w-auto">
         Send Email
       </Button>
