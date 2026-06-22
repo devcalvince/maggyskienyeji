@@ -155,7 +155,10 @@ export const Contact = () => {
               </div>
               <div>
                 <h4 className="font-semibold text-foreground">Visit Us</h4>
-                <p className="text-sm text-muted-foreground">Eldoret, Kenya</p>
+                <p className="text-sm text-muted-foreground">
+                 Wagon Wheel Hotel Business Centre, Room 13,<br />
+                 Opposite Sirikwa Hotel, Eldoret, Kenya
+                </p>
               </div>
             </div>
             <a 
@@ -304,7 +307,7 @@ export const Contact = () => {
               Open in Google Maps <ExternalLink className="w-3 h-3" />
             </a>
           </p>
-        </div>
+        </div>%
       </div>
     </section>
   );

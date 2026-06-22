@@ -42,7 +42,7 @@ export const products: Product[] = [
     localName: "Terere / Chepkerta",
     sizes: [
       { weight: "50g", price: 200 },
-      { weight: "100g", price: 350 },
+      { weight: "100g", price: 400 },
     ],
     image: amaranthImg,
     category: "Dried Veggies",
@@ -54,8 +54,8 @@ export const products: Product[] = [
     name: "Kales",
     localName: "Sukuma Wiki",
     sizes: [
-      { weight: "50g", price: 180 },
-      { weight: "100g", price: 270 },
+      { weight: "50g", price: 200 },
+      { weight: "100g", price: 300 },
     ],
     image: kalesImg,
     category: "Dried Veggies",
@@ -68,7 +68,7 @@ export const products: Product[] = [
     localName: "Kunde",
     sizes: [
       { weight: "50g", price: 200 },
-      { weight: "100g", price: 350 },
+      { weight: "100g", price: 400 },
     ],
     image: cowPeasImg,
     category: "Dried Veggies",
@@ -81,7 +81,7 @@ export const products: Product[] = [
     localName: "Nderema",
     sizes: [
       { weight: "50g", price: 200 },
-      { weight: "100g", price: 350 },
+      { weight: "100g", price: 400 },
     ],
     image: africanSpinachImg,
     category: "Dried Veggies",
@@ -107,7 +107,7 @@ export const products: Product[] = [
     localName: "Managu / Sochot",
     sizes: [
       { weight: "50g", price: 200 },
-      { weight: "100g", price: 350 },
+      { weight: "100g", price: 400 },
     ],
     image: managuImg,
     category: "Dried Veggies",
@@ -119,8 +119,8 @@ export const products: Product[] = [
     name: "Cabbage",
     localName: "Cabbage",
     sizes: [
-      { weight: "50g", price: 180 },
-      { weight: "100g", price: 270 },
+      { weight: "50g", price: 200 },
+      { weight: "100g", price: 300 },
     ],
     image: cabbageImg,
     category: "Dried Veggies",
