@@ -3,8 +3,7 @@ import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 import { toast } from '@/hooks/use-toast';
 
-const GOOGLE_MAPS_EMBED_URL = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.622540715603!2d35.2959418!3d0.5676055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x178105f7d5bbfff7%3A0x966ca47b05971f2c!2sMAGGY%27S%20KIENYEJI%20LTD.!5e0!3m2!1sen!2snl!4v1765895018971!5m2!1sen!2snl";
-
+const GOOGLE_MAPS_EMBED_URL = "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3989.6530478895734!2d35.272953374964686!3d0.5215101994733864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMMKwMzEnMTcuNCJOIDM1wrAxNiczMS45IkU!5e0!3m2!1sen!2snl!4v1782300905151!5m2!1sen!2snl";
 export const Contact = () => {
   const [formData, setFormData] = useState({
     fullName: '',
@@ -156,13 +155,18 @@ export const Contact = () => {
               <div>
                 <h4 className="font-semibold text-foreground">Visit Us</h4>
                 <p className="text-sm text-muted-foreground">
-                 Wagon Wheel Hotel Business Centre, Room 13,<br />
-                 Opposite Sirikwa Hotel, Eldoret, Kenya
+                 Wagon Wheel Hotel Business Centre
+                </p>
+                <p className="text-sm text-muted-foreground">
+                  Room 13, Opposite Sirikwa Hotel
+                </p>
+                <p className="text-sm text-muted-foreground">
+                  Eldoret, Kenya
                 </p>
               </div>
             </div>
             <a 
-              href="https://maps.app.goo.gl/BupkE5xLRoiKwMm97" 
+              href="https://maps.app.goo.gl/5fD373mAi1kDF9nC7"
               target="_blank" 
               rel="noopener noreferrer"
             >
@@ -299,7 +303,7 @@ export const Contact = () => {
           </div>
           <p className="text-center mt-3 text-muted-foreground">
             <a 
-              href="https://maps.app.goo.gl/BupkE5xLRoiKwMm97" 
+              href="https://maps.app.goo.gl/5fD373mAi1kDF9nC7"
               target="_blank" 
               rel="noopener noreferrer"
               className="hover:text-secondary transition-colors inline-flex items-center gap-1"

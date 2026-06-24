@@ -101,6 +101,8 @@ export const Footer = () => {
             <ul className="space-y-3 text-primary-foreground/80">
               <li>+254 721 937 682</li>
               <li>maggyskienyeji@gmail.com</li>
+              <li>Wagon Wheel Hotel Business Centre</li>
+              <li>Room 13, Opposite Sirikwa Hotel</li>
               <li>Eldoret, Kenya</li>
               <li>Mon – Sat: 8:00 AM – 6:00 PM</li>
             </ul>
