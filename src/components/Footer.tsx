@@ -104,6 +104,8 @@ export const Footer = () => {
               <li>Wagon Wheel Hotel Business Centre</li>
               <li>Room 13, Opposite Sirikwa Hotel</li>
               <li>Eldoret, Kenya</li>
+              <li>Also In Kimumu-Peris, Kambi-Nairobi Road,</li> 
+              <li>Kimumu ward, 30100, Uasin Gishu, KE</li>
               <li>Mon – Sat: 8:00 AM – 6:00 PM</li>
             </ul>
           </div>

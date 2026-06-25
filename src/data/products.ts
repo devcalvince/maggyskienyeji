@@ -94,7 +94,7 @@ export const products: Product[] = [
     localName: "Sakiat",
     sizes: [
       { weight: "50g", price: 200 },
-      { weight: "100g", price: 350 },
+      { weight: "100g", price: 400 },
     ],
     image: spiderPlantImg,
     category: "Dried Veggies",
